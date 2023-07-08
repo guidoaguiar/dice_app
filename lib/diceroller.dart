@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+final randomizer = Random();
+
 class DiceRoller extends StatefulWidget {
   const DiceRoller({super.key});
 
@@ -24,7 +26,7 @@ class _DiceRollerState extends State<DiceRoller> {
         ),
         ElevatedButton(
           onPressed: () {
-            var diceRoll = Random().nextInt(6) + 1;
+            var diceRoll = randomizer.nextInt(6) + 1;
             setState(() {
               activeDiceImage = 'assets/images/dice-$diceRoll.png';
               print('Button pressed');
